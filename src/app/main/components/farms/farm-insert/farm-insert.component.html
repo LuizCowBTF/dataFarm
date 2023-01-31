@@ -1,0 +1,51 @@
+<div class="container">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="navbar-brand ms-3">
+      <form>
+        <div class="row bordTop">
+          <div class="col-3">
+            <input type="text" class="form-control" id="proprietario" aria-describedby="Proprietário"
+              placeholder="Proprietário:">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control" id="fazenda" aria-describedby="Fazenda" placeholder="Fazenda:">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control" id="talhao" aria-describedby="talhao" placeholder="Talhão:">
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-dark">CADASTRAR</button>
+          </div>
+          <div class="col-1">
+            <button type="submit" class="btn btn-dark">X</button>
+          </div>
+        </div>
+        <div class="row bordBot">
+          <div class="col-12">
+            <div class="card text-white bg-dark">
+              <div class="card-body">
+                <app-chart-line></app-chart-line>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="card text-white bg-dark">
+                  <div class="card-body">
+                    <app-chart-pie></app-chart-pie>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="card text-white bg-dark">
+                  <div class="card-body">
+                    <app-chart-bar></app-chart-bar>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>

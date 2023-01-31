@@ -1,0 +1,26 @@
+.container {
+   background-color: rgba(000,000,000,1);
+   border: 10px solid rgba(255,255,255,1);
+   border-radius: 10px;
+   color: #FFFFFF;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   padding: 0;
+   overflow-y: hidden;
+   overflow-x: hidden;
+}
+
+.bordTop {
+   border-top: 1px solid rgba(25,168,218,0.6);
+   border-bottom: 1px solid rgba(25,168,218,0.6);
+   padding: 10px;
+}
+
+.bordBot {
+   margin-top: 3px;
+   padding: 5px;
+}
