@@ -1,0 +1,726 @@
+{
+	"paths": {
+		"/api/farm": {
+			"get": {
+				"tags": [
+					"Farm"
+				],
+				"summary": "Farm",
+				"operationId": "farm_api_farm_get",
+				"parameters": [
+					{
+						"required": true,
+						"schema": {
+							"title": "Code",
+							"type": "string"
+						},
+						"name": "code",
+						"in": "header"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successful Response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FarmResponseBody"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Forbidden",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "Validation Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/HTTPValidationError"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/field/{idField}": {
+			"get": {
+				"tags": [
+					"Field"
+				],
+				"summary": "Field Info",
+				"operationId": "field_info_api_field__idField__get",
+				"parameters": [
+					{
+						"required": true,
+						"schema": {
+							"title": "Idfield",
+							"type": "string"
+						},
+						"name": "idField",
+						"in": "path"
+					},
+					{
+						"required": true,
+						"schema": {
+							"title": "Code",
+							"type": "string"
+						},
+						"name": "code",
+						"in": "header"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successful Response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FieldInfoResponseBody"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Forbidden",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "Validation Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/HTTPValidationError"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"Field"
+				],
+				"summary": "Field Info",
+				"operationId": "field_info_api_field__idField__put",
+				"parameters": [
+					{
+						"required": true,
+						"schema": {
+							"title": "Idfield",
+							"type": "string"
+						},
+						"name": "idField",
+						"in": "path"
+					},
+					{
+						"required": true,
+						"schema": {
+							"title": "Code",
+							"type": "string"
+						},
+						"name": "code",
+						"in": "header"
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/FieldInfo"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "Successful Response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FieldInfoResponseBody"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Forbidden",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "Validation Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/HTTPValidationError"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/api/field/{idField}/dashboard": {
+			"get": {
+				"tags": [
+					"Field"
+				],
+				"summary": "Field Dashboard",
+				"operationId": "field_dashboard_api_field__idField__dashboard_get",
+				"parameters": [
+					{
+						"required": true,
+						"schema": {
+							"title": "Idfield",
+							"type": "string"
+						},
+						"name": "idField",
+						"in": "path"
+					},
+					{
+						"required": true,
+						"schema": {
+						"title": "Code",
+						"type": "string"
+					},
+					"name": "code",
+					"in": "header"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Successful Response",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/FieldDashboardResponseBody"
+								}
+							}
+						}
+					},
+					"400": {
+						"description": "Bad Request",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"403": {
+						"description": "Forbidden",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					},
+					"422": {
+						"description": "Validation Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/HTTPValidationError"
+								}
+							}
+						}
+					},
+					"500": {
+						"description": "Internal Server Error",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/ErrorBody"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+"schemas": {
+"Efficiency": {
+"title": "Efficiency",
+"required": [
+"data",
+"label"
+],
+"type": "object",
+"properties": {
+"data": {
+"title": "Data",
+"type": "integer"
+},
+"label": {
+"title": "Label",
+"type": "string"
+}
+}
+},
+"Error": {
+"title": "Error",
+"type": "object",
+"properties": {
+"title": {
+"title": "Title",
+"type": "string"
+},
+"description": {
+"title": "Description",
+"type": "string"
+},
+"status": {
+"title": "Status",
+"type": "integer"
+}
+}
+},
+"ErrorBody": {
+"title": "ErrorBody",
+"required": [
+"error"
+],
+"type": "object",
+"properties": {
+"error": {
+"$ref": "#/components/schemas/Error"
+}
+}
+},
+"FarmResponse": {
+"title": "FarmResponse",
+"required": [
+"name",
+"fields"
+],
+"type": "object",
+"properties": {
+"name": {
+"title": "Name",
+"type": "string"
+},
+"fields": {
+"title": "Fields",
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Feature"
+}
+}
+}
+},
+"FarmResponseBody": {
+"title": "FarmResponseBody",
+"required": [
+"data"
+],
+"type": "object",
+"properties": {
+"data": {
+"$ref": "#/components/schemas/FarmResponse"
+},
+"success": {
+"$ref": "#/components/schemas/Success"
+},
+"warning": {
+"$ref": "#/components/schemas/WarningMessage"
+},
+"error": {
+"$ref": "#/components/schemas/Error"
+}
+}
+},
+"Feature": {
+"title": "Feature",
+"required": [
+"properties",
+"geometry"
+],
+"type": "object",
+"properties": {
+"type": {
+"title": "Type",
+"type": "string",
+"default": "Feature"
+},
+"properties": {
+"$ref": "#/components/schemas/FieldFeature"
+},
+"geometry": {
+"$ref": "#/components/schemas/Polygon"
+}
+}
+},
+"FieldDashboardResponse": {
+"title": "FieldDashboardResponse",
+"required": [
+"evolution",
+"rain",
+"efficiency"
+],
+"type": "object",
+"properties": {
+"evolution": {
+"$ref": "#/components/schemas/Graphic"
+},
+"rain": {
+"$ref": "#/components/schemas/Graphic"
+},
+"efficiency": {
+"$ref": "#/components/schemas/Efficiency"
+}
+}
+},
+"FieldDashboardResponseBody": {
+"title": "FieldDashboardResponseBody",
+"required": [
+"data"
+],
+"type": "object",
+"properties": {
+"data": {
+"$ref": "#/components/schemas/FieldDashboardResponse"
+},
+"success": {
+"$ref": "#/components/schemas/Success"
+},
+"warning": {
+"$ref": "#/components/schemas/WarningMessage"
+},
+"error": {
+"$ref": "#/components/schemas/Error"
+}
+}
+},
+"FieldFeature": {
+"title": "FieldFeature",
+"required": [
+"idField",
+"name"
+],
+"type": "object",
+"properties": {
+"idField": {
+"title": "Idfield",
+"type": "string"
+},
+"name": {
+"title": "Name",
+"type": "string"
+}
+}
+},
+"FieldInfo": {
+"title": "FieldInfo",
+"required": [
+"grower",
+"farm",
+"field"
+],
+"type": "object",
+"properties": {
+"grower": {
+"title": "Grower",
+"type": "string"
+},
+"farm": {
+"title": "Farm",
+"type": "string"
+},
+"field": {
+"title": "Field",
+"type": "string"
+}
+}
+},
+"FieldInfoResponseBody": {
+"title": "FieldInfoResponseBody",
+"required": [
+"data"
+],
+"type": "object",
+"properties": {
+"data": {
+"$ref": "#/components/schemas/FieldInfo"
+},
+"success": {
+"$ref": "#/components/schemas/Success"
+},
+"warning": {
+"$ref": "#/components/schemas/WarningMessage"
+},
+"error": {
+"$ref": "#/components/schemas/Error"
+}
+}
+},
+"Graphic": {
+"title": "Graphic",
+"required": [
+"data",
+"xLabel",
+"yLabel"
+],
+"type": "object",
+"properties": {
+"data": {
+"title": "Data",
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/Point"
+}
+},
+"xLabel": {
+"title": "Xlabel",
+"type": "string"
+},
+"yLabel": {
+"title": "Ylabel",
+"type": "string"
+}
+}
+},
+"HTTPValidationError": {
+"title": "HTTPValidationError",
+"type": "object",
+"properties": {
+"detail": {
+"title": "Detail",
+"type": "array",
+"items": {
+"$ref": "#/components/schemas/ValidationError"
+}
+}
+}
+},
+"Point": {
+"title": "Point",
+"required": [
+"x",
+"y"
+],
+"type": "object",
+"properties": {
+"x": {
+"title": "X",
+"anyOf": [
+{
+"type": "integer"
+},
+{
+"type": "string"
+}
+]
+},
+"y": {
+"title": "Y",
+"type": "integer"
+}
+}
+},
+"Polygon": {
+"title": "Polygon",
+"required": [
+"coordinates"
+],
+"type": "object",
+"properties": {
+"type": {
+"title": "Type",
+"type": "string",
+"default": "Polygon"
+},
+"coordinates": {
+"title": "Coordinates",
+"type": "array",
+"items": {
+"type": "array",
+"items": {
+"type": "array",
+"items": {
+"type": "number"
+}
+}
+}
+}
+}
+},
+"Success": {
+"title": "Success",
+"type": "object",
+"properties": {
+"title": {
+"title": "Title",
+"type": "string"
+}
+}
+},
+"ValidationError": {
+"title": "ValidationError",
+"required": [
+"loc",
+"msg",
+"type"
+],
+"type": "object",
+"properties": {
+"loc": {
+"title": "Location",
+"type": "array",
+"items": {
+"type": "string"
+}
+},
+"msg": {
+"title": "Message",
+"type": "string"
+},
+"type": {
+"title": "Error Type",
+"type": "string"
+}
+}
+},
+"WarningMessage": {
+"title": "WarningMessage",
+"type": "object",
+"properties": {
+"title": {
+"title": "Title",
+"type": "string"
+},
+"description": {
+"title": "Description",
+"type": "string"
+}
+}
+}
+}
+}
+}
